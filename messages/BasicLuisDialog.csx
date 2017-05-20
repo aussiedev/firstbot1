@@ -30,6 +30,8 @@ public class BasicLuisDialog : LuisDialog<object>
 
         if (result.Query.Contains("kem chho?"))
             await context.PostAsync($"Maja ma chhiye.  Tame?"); //
+        else if (result.Query.Contains("namaste"))
+            await context.PostAsync($"Namaskar ji.  Kaise hai aap?"); //
         else
             await context.PostAsync($"Greeting. You said: {result.Query}"); //
         context.Wait(MessageReceived);
